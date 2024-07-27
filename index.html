@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Supervisor Dashboard</div>
+        <ul class="navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="dashboard">
+            <div class="card">
+                <h3>Total Users</h3>
+                <p>1,234</p>
+            </div>
+            <div class="card">
+                <h3>Active Users</h3>
+                <p>567</p>
+            </div>
+            <div class="card">
+                <h3>New Registrations</h3>
+                <p>89</p>
+            </div>
+        </div>
+        <div class="upload-section">
+            <h2>Upload Lantana Flower Drone Image</h2>
+            <input type="file" id="imageUpload" accept="image/*">
+            <button id="getReports">Analyze</button>
+        </div>
+        <div class="data-section">
+            <h2>Analyzed Data</h2>
+            <div id="imagePreview"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Point</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table-body">
+                    <!-- Dynamic content will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Supervisor Dashboard</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
