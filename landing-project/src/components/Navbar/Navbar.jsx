@@ -78,7 +78,7 @@ const Navbar = () => {
 <a href="#" className="py-5 px-3 text-green-500 hover:text-green-700" onClick={handleAboutUsClick}>ABOUT US</a>
 <a href="#" className="py-5 px-3 text-green-500 hover:text-green-700" onClick={handleShopClick}>SHOP</a>
 <a href="#" className="py-5 px-3 text-green-500 hover:text-green-700" onClick={handleVolunteerClick}>JOIN US</a>
-<a href="#" className="py-5 px-3 text-green-500 hover:text-green-700" onClick={handleContactClick}>LOG IN</a>
+<a href="http://127.0.0.1:5000//home" target='_blank' className="py-5 px-3 text-green-500 hover:text-green-700">LOG IN</a>
 
 <a href="#" className="py-5 px-3 text-green-500 hover:text-green-700" onClick={handleContactClick}>CONTACT</a>
             </div>

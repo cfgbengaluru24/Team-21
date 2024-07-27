@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lantena Detection</title>
+    <link rel="stylesheet" href="../static/styles/animal.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="text-section">
+                <h1>Animal Detection</h1>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" accept=".jpg,.jpeg,.png" multiple required>
+                    <input type="submit" value="Upload">
+                </form>
+            </div>
+            <div class="image-section">
+                <img src="animal.jpeg" alt="Lantena Detection">
+            </div>
+        </div>
+        {% if results %}
+        {% for result in results %}
+        <div class="result">
+            <img src="{{ url_for('static', filename=result['file_name']) }}" alt="Uploaded Image">
+            <div>Number of Detected Animals: {{ result['animal_count'] }}</div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </header>
+</body>
+</html>
