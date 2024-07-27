@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    width: 80%;
+    width: 100%;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -22,7 +22,8 @@ header {
 }
 
 .text-section {
-    max-width: 50%;
+    max-width: 100%;
+    color: green;
 }
 
 .text-section h1 {
@@ -33,7 +34,7 @@ header {
 .text-section button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007BFF;
+    background-color: darkgreen;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -42,11 +43,12 @@ header {
 }
 
 .text-section button:hover {
-    background-color: #0056b3;
+    background-color: black;
 }
 
 .image-section img {
     max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    max-height: 650px;
+    
+    border-radius: 20px;
 }
