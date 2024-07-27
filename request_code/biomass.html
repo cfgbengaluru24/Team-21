@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomass Request Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function submitForm() {
+            alert('Request Submitted!');
+            return false; // Prevent form submission
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Biomass Request Form</h1>
+        <form onsubmit="return submitForm()">
+            <label for="flower-name">Flower Name:</label>
+            <input type="text" id="flower-name" name="flower-name" required>
+            <br>
+            <label for="request-details">Request Details:</label>
+            <textarea id="request-details" name="request-details" required></textarea>
+            <br>
+            <input type="submit" value="Submit Request">
+        </form>
+    </div>
+</body>
+
+</html>

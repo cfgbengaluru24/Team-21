@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elephant Biomass Request Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function submitForm() {
+            alert('Request Submitted!');
+            return false; // Prevent form submission
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Elephant Biomass Request Form</h1>
+        <form onsubmit="return submitForm()">
+            <label for="elephant-name">Elephant Name:</label>
+            <input type="text" id="elephant-name" name="elephant-name" required>
+            <br>
+            <label for="biomass-needed">Amount of Biomass Needed (kg):</label>
+            <input type="number" id="biomass-needed" name="biomass-needed" required>
+            <br>
+            <label for="request-details">Request Details:</label>
+            <textarea id="request-details" name="request-details" required></textarea>
+            <br>
+            <input type="submit" value="Submit Request">
+        </form>
+    </div>
+</body>
+
+</html>
