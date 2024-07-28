@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lantena Detection</title>
+    <link rel="stylesheet" href="../static/styles/latanus.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="text-section">
+          <h1>Lantana Detection</h1>
+          <form 
+            action="{{ url_for('latanus_detection') }}"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <input class="chooseform"
+              type="file"
+              name="file"
+              accept=".jpg,.jpeg,.png"
+              multiple
+              required
+            />
+            <input class="form" type="submit" value="Upload" />
+          </form>
+          <!-- <button onclick="document.getElementById('fileInput').click()">Upload Image</button>
+                <input type="file" id="fileInput" style="display: none;"> -->
+        </div>
+        <div class="image-section">
+          <img src="../static/images/lantanus.png" class="img" alt="Lantana Detection" />
+        </div>
+      </div>
+      {% if result and percentage %}
+      <div class="block">
+        <img src="{{result}}" alt="Uploaded Image" />
+        <div>Percentage : {{percentage}}</div>
+      </div>
+      {% endif %}
+    </header>
+  </body>
+</html>

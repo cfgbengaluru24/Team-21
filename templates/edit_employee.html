@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles/employee.css">
+</head>
+
+<body>
+    <h1>Edit Employee</h1>
+    <form method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ employee[1] }}"><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ employee[2] }}"><br>
+
+        <label for="text">Gender:</label>
+        <input type="text" id="text" name="text" value="{{ employee[3] }}"><br>
+
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" value="{{ employee[4] }}"><br>
+
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" step="0.01" name="salary" value="{{ employee[5] }}"><br>
+
+        <input type="submit" value="Update Employee">
+    </form>
+</body>
+
+</html>
