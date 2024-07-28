@@ -116,7 +116,7 @@ const HomePage = () => {
           {/* Add more slides as needed */}
         </Slider>
         {/* <AboutSection /> */}
-        <Programs/>
+        
         <VideoSection/>
         <Footer/>
       </div>

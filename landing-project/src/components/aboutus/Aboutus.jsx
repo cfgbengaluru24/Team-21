@@ -16,28 +16,7 @@ const Aboutus = () => {
 
 The Sholas are a unique forest type, endemic to the southern part of the western ghats, and were the inspiration for us to start this organisation, hence the name.
         </p>
-        <div className="bg-green-400 text-white py-6 px-8 rounded-lg text-center mt-6">
-          <h2 className="text-4xl font-bold">28</h2>
-          <p className="text-lg mt-2">YEARS OF EXPERIENCE</p>
-        </div>
-      </div>
-      <div className="w-full flex flex-wrap justify-between bg-green-400 text-white py-6 px-4 rounded-lg mt-6">
-        <div className="text-center flex-1 m-2">
-          <h2 className="text-2xl font-bold">15k+</h2>
-          <p className="text-lg mt-2">VOLUNTEER</p>
-        </div>
-        <div className="text-center flex-1 m-2">
-          <h2 className="text-2xl font-bold">380+</h2>
-          <p className="text-lg mt-2">SPONSORS</p>
-        </div>
-        <div className="text-center flex-1 m-2">
-          <h2 className="text-2xl font-bold">125</h2>
-          <p className="text-lg mt-2">BRANCHES</p>
-        </div>
-        <div className="text-center flex-1 m-2">
-          <h2 className="text-2xl font-bold">75+</h2>
-          <p className="text-lg mt-2">AWARDS</p>
-        </div>
+        
       </div>
     </div>
   );
