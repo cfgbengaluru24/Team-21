@@ -10,32 +10,32 @@
     <header>
       <div class="container">
         <div class="text-section">
-          <h1>Lantena Detection</h1>
-          <form
+          <h1>Lantana Detection</h1>
+          <form 
             action="{{ url_for('latanus_detection') }}"
             method="post"
             enctype="multipart/form-data"
           >
-            <input
+            <input class="chooseform"
               type="file"
               name="file"
               accept=".jpg,.jpeg,.png"
               multiple
               required
             />
-            <input type="submit" value="Upload" />
+            <input class="form" type="submit" value="Upload" />
           </form>
           <!-- <button onclick="document.getElementById('fileInput').click()">Upload Image</button>
                 <input type="file" id="fileInput" style="display: none;"> -->
         </div>
         <div class="image-section">
-          <img src="images/lantanus.png" class="img" alt="Lantena Detection" />
+          <img src="../static/images/lantanus.png" class="img" alt="Lantana Detection" />
         </div>
       </div>
       {% if result and percentage %}
-      <div>
+      <div class="block">
         <img src="{{result}}" alt="Uploaded Image" />
-        <div>Percentage:{{percentage}}</div>
+        <div>Percentage : {{percentage}}</div>
       </div>
       {% endif %}
     </header>

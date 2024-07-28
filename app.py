@@ -1,9 +1,26 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template,redirect, url_for
 import cv2
 import os
 import numpy as np
 import torch
 from PIL import Image
+import mysql.connector
+import os
+from dotenv import load_dotenv
+
+load_dotenv() 
+
+
+
+# Configure MySQL connection
+db = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='Deandofe#2023',
+    database='employment_management'
+)
+
+cursor = db.cursor()
 app = Flask(__name__)
 
 
@@ -11,7 +28,8 @@ model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 
 @app.route("/home")
 def hello_world():
-    return render_template("supervisor.html")
+    return render_template("index.html")
+    # return render_template("supervisor.html")
     # return "<p>Hello, World!</p>"
 
 def detect_and_display_green_areas(image_path):
@@ -44,6 +62,10 @@ def detect_and_display_green_areas(image_path):
     cv2.imwrite(output_image_path, cv2.cvtColor(output_image, cv2.COLOR_RGB2BGR))
 
     return green_area_percentage, output_image_path
+
+@app.route("/loading")
+def loading():
+    return render_template("loading.html")
 
 @app.route("/latanus", methods=['GET', 'POST'])
 def latanus_detection():
@@ -88,7 +110,7 @@ def count_animals(image):
     
     return animal_count
 
-@app.route('/animal_detection', methods=['GET', 'POST'])
+@app.route("/animal_detection", methods=['GET', 'POST'])
 def animal_detection():
     if request.method == 'POST':
         files = request.files.getlist('file')  # Get list of files
@@ -101,11 +123,63 @@ def animal_detection():
                 # Save the file to a static directory to display later
                 file_path = f'static/animalImages/{file.filename}'
                 image.save(file_path)
-                results.append({'file_name': file.filename, 'animal_count': animal_count})
+                # filename = file.filename
+                final_file_path = os.path.join("static/animalImages", f'{file.filename}')
+                results.append({'file_path': final_file_path, 'animal_count': animal_count})
                 
         return render_template('animal.html', results=results)
 
     return render_template('animal.html', results=None)
 
-if __name__ == "__main__":
-    app.run(debug=True) 
+
+
+
+@app.route('/employee_details')
+def employee_details():
+    cursor.execute("SELECT * FROM employees")
+    employees = cursor.fetchall()
+    return render_template('employee.html', employees=employees)
+
+@app.route('/add', methods=['GET', 'POST'])
+def add_employee():
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        email = request.form['text']
+        position = request.form['position']
+        salary = request.form['salary']
+
+        cursor.execute("INSERT INTO employees (first_name, last_name, email, position, salary) VALUES (%s, %s, %s, %s, %s)", 
+                       (first_name, last_name, email, position, salary))
+        db.commit()
+        return redirect(url_for('employee_details'))
+
+    return render_template('add_employee.html')
+
+@app.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit_employee(id):
+    cursor.execute("SELECT * FROM employees WHERE id=%s", (id,))
+    employee = cursor.fetchone()
+
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        email = request.form['text']
+        position = request.form['position']
+        salary = request.form['salary']
+
+        cursor.execute("UPDATE employees SET first_name=%s, last_name=%s, email=%s, position=%s, salary=%s WHERE id=%s",
+                       (first_name, last_name, email, position, salary, id))
+        db.commit()
+        return redirect(url_for('employee_details'))
+
+    return render_template('edit_employee.html', employee=employee)
+
+@app.route('/delete/<int:id>', methods=['GET'])
+def delete_employee(id):
+    cursor.execute("DELETE FROM employees WHERE id=%s", (id,))
+    db.commit()
+    return redirect(url_for('employee_details'))
+
+# if __name__ == "__main__":
+#     app.run(debug=True) 
