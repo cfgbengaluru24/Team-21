@@ -6,7 +6,7 @@ const Aboutus = () => {
   return (
     <div className="flex flex-wrap justify-between p-6 bg-gray-100">
       <div className="w-full lg:w-1/2 p-2">
-        <img src="https://www.salaambaalaktrust.com/blog/wp-content/uploads/2022/02/Tax-Exemption-1024x683.jpg" alt="Happy children" className="w-full h-auto rounded-lg" />
+        <img src="https://static.independent.co.uk/2023/04/06/12/newFile-4.jpg" />
       </div>
       <div className="w-full lg:w-1/2 p-6">
         <h2 className="text-green-400 text-2xl font-bold">ABOUT US</h2>

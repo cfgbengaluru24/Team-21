@@ -12,6 +12,7 @@ import ProductList from './pages/shoppage/ProductList';
 import Requestpage from './pages/requestpage/Requestpage';
 import Aboutuspage from './pages/aboutuspage/Aboutuspage';
 import Volunteerpage from './pages/volunteerpage/Volunteerpage';
+import LoginPage from './pages/loginpage/LoginPage';
 const App = () => {
   return (
     <>
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/Request" element={<Requestpage/>} />
           <Route path="/Aboutus" element={<Aboutuspage/>} />
           <Route path="/Volunteer" element={<Volunteerpage/>} />
+          <Route path="/Login" element={<LoginPage/>} />
         </Routes>
       </Router>
     </div>

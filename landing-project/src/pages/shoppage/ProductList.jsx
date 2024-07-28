@@ -18,17 +18,17 @@ const ProductList = () => {
       <h2 className="text-3xl font-extrabold text-center text-green-400 mb-6">Our Products</h2>
       <div className="flex flex-wrap justify-center">
         <ProductCard
-          image="https://www.salaambaalaktrust.com/blog/wp-content/uploads/2022/02/Tax-Exemption-1024x683.jpg"
+          image="https://th-i.thgim.com/public/life-and-style/fashion/v93mxb/article68380775.ece/alternates/LANDSCAPE_660/726A9889-147.jpg"
           title="Lantana Elephants"
           price={10000}
         />
         <ProductCard
-          image="https://www.salaambaalaktrust.com/blog/wp-content/uploads/2022/02/Tax-Exemption-1024x683.jpg"
+          image="https://cdn.shopify.com/s/files/1/1934/5651/t/17/assets/bench-9-edit-1676630784421_500x.jpg?v=1676630785"
           title="Artifacts"
           price={5000}
         />
         <ProductCard
-          image="https://www.salaambaalaktrust.com/blog/wp-content/uploads/2022/02/Tax-Exemption-1024x683.jpg"
+          image="https://worldexport.com.vn/upload/images/biomass(2).jpeg"
           title="Biomass"
           price={4000}
         />
